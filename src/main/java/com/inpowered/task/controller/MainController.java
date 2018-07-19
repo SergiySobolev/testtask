@@ -25,7 +25,7 @@ public class MainController {
 
     @RequestMapping(value = "/result", method = GET)
     public Object getResult(@RequestParam String url) {
-       // hi
+       // hi hi
         Optional<ResultData> resultData = resultFacade.findResultByUrl(url);
         return resultData.map(r -> ResponseEntity.status(OK).body(r))
                 .orElseGet(() -> ResponseEntity.status(NOT_FOUND).body(null));
